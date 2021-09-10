@@ -28,14 +28,14 @@
 
 ;; 窗口最大化
 (add-hook 'window-setup-hook #'toggle-frame-maximized)
-(setq doom-font (font-spec :family "等距更纱黑体 Slab SC" :size 14))
+(setq doom-font (font-spec :family "Sarasa Term Slab SC" :size 14))
 
 (+global-word-wrap-mode +1)
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-plain)
+(setq doom-theme 'doom-nord)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
