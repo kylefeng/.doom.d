@@ -54,3 +54,4 @@
 (package! company-native-complete)
 (package! lab-themes)
 (package! flucui-themes)
+(package! graphql-mode)

@@ -4,6 +4,7 @@
 ;; sync' after modifying this file!
 
 (add-to-list 'auto-mode-alist '("\\.groovy\\|Jenkinsfile\\'" . groovy-mode))
+(add-to-list 'auto-mode-alist '("\\.graphql\\|.graphqls\\'" . graphql-mode))
 
 (setq company-global-modes '(not sh-mode org-mode))
 
@@ -35,7 +36,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-nord)
+(setq doom-theme 'doom-nord-light)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
