@@ -55,3 +55,5 @@
 (package! lab-themes)
 (package! flucui-themes)
 (package! graphql-mode)
+(package! feature-mode)
+(package! srcery-theme)
