@@ -57,3 +57,4 @@
 (package! graphql-mode)
 (package! feature-mode)
 (package! srcery-theme)
+(package! modus-themes)

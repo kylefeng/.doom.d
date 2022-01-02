@@ -31,14 +31,14 @@
 
 ;; 窗口最大化
 (pushnew! initial-frame-alist '(width . 120) '(height . 45))
-(setq doom-font (font-spec :family "Sarasa Term Slab SC" :size 14))
+(setq doom-font (font-spec :family "等距更纱黑体 T SC" :size 14))
 
 (+global-word-wrap-mode +1)
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'srcery)
+(setq doom-theme 'doom-one)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -103,6 +103,23 @@
   (setq lsp-ui-sideline-enable nil)
   (setq lsp-prefer-flymake :none)
   (setq lsp-diagnostics-provider :none))
+
+(use-package! org-download
+  :config
+  (setq-default org-download-image-dir "/Users/kylefeng/development/org/images/")
+  (setq org-download-method 'directory))
+
+;; org-roam
+(setq org-roam-directory "/Users/kylefeng/development/org/roam")
+(use-package! org-roam
+  :after org
+  :commands
+  (org-roam-buffer
+   org-roam-setup
+   org-roam-capture
+   org-roam-node-find)
+  :config
+  (org-roam-setup))
 
 ;; org-mode
 (use-package! org
@@ -190,6 +207,4 @@
 ;; feature-mode
 (require 'feature-mode)
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
-
-
 (defun native-comp-available-p nil)

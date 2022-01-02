@@ -94,7 +94,7 @@
        ansible
        ;;debugger          ; FIXME stepping through code, to help you add bugs
        ;;direnv
-       ;;docker
+       docker
        ;;editorconfig      ; let someone else argue about tabs vs spaces
        ;;ein               ; tame Jupyter notebooks with emacs
        (eval +overlay)     ; run code, run (also, repls)
@@ -118,7 +118,7 @@
 
        :lang
        ;;agda              ; types of types of types of types...
-       ;;beancount         ; mind the GAAP
+       beancount         ; mind the GAAP
        ;;cc                ; C > C++ == 1
        clojure           ; java with a lisp
        ;;common-lisp       ; if you've seen one lisp, you've seen them all
@@ -155,7 +155,8 @@
        ;;nim               ; python + lisp at the speed of c
        ;;nix               ; I hereby declare "nix geht mehr!"
        ;;ocaml             ; an objective camel
-       org               ; organize your plain life in plain text
+       ;;organize your plain life in plain text
+       (org +pomodoro +dragndrop +org-download +roam2)
        ;;php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
        ;;purescript        ; javascript, but functional
