@@ -31,7 +31,7 @@
 
 ;; 窗口最大化
 (pushnew! initial-frame-alist '(width . 120) '(height . 45))
-(setq doom-font (font-spec :family "等距更纱黑体 T SC" :size 14))
+(setq doom-font (font-spec :family "等距更纱黑体 Slab SC" :size 14))
 
 (+global-word-wrap-mode +1)
 
@@ -104,9 +104,11 @@
   (setq lsp-prefer-flymake :none)
   (setq lsp-diagnostics-provider :none))
 
+
 (use-package! org-download
   :config
   (setq-default org-download-image-dir "/Users/kylefeng/development/org/images/")
+  (setq-default org-download-heading-lvl nil)
   (setq org-download-method 'directory))
 
 ;; org-roam
@@ -208,3 +210,31 @@
 (require 'feature-mode)
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
 (defun native-comp-available-p nil)
+
+;; protobuf
+(require 'protobuf-mode)
+(add-to-list 'auto-mode-alist '("\.proto$" . protobuf-mode))
+
+(use-package! websocket
+  :after org-roam)
+
+(use-package! org-roam-ui
+  :after org-roam
+  :config
+  (setq org-roam-ui-sync-theme t
+        org-roam-ui-follow t
+        org-roam-ui-update-on-save t
+        org-roam-ui-open-on-start t))
+
+(setq copilot-node-executable "/Users/kylefeng/.nvm/versions/node/v19.8.1/bin/node")
+
+;; accept completion from copilot and fallback to company
+(use-package! copilot
+  :hook (prog-mode . copilot-mode)
+  :bind (("C-TAB" . 'copilot-accept-completion-by-word)
+         ("C-<tab>" . 'copilot-accept-completion-by-word)
+         :map copilot-completion-map
+         ("<tab>" . 'copilot-accept-completion)
+         ("TAB" . 'copilot-accept-completion)))
+
+(setq pipenv-executable "/Users/kylefeng/Library/Python/3.11/bin/pipenv")

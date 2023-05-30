@@ -49,6 +49,8 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 
+(package! copilot
+  :recipe (:host github :repo "zerolfx/copilot.el" :files ("*.el" "dist")))
 (package! org-pomodoro)
 (package! groovy-mode)
 (package! company-native-complete)
@@ -58,3 +60,6 @@
 (package! feature-mode)
 (package! srcery-theme)
 (package! modus-themes)
+(package! protobuf-mode)
+(unpin! org-roam)
+(package! org-roam-ui)
